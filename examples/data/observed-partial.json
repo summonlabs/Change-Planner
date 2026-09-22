@@ -1,0 +1,270 @@
+{
+  "planId": "plan-ladder-42",
+  "planGeneration": 1,
+  "attempt": 2,
+  "authorityGeneration": 3,
+  "observedGeneration": 12,
+  "bootIncarnation": 5,
+  "observedEpoch": 2,
+  "observedAt": 1000000500,
+  "state": {
+    "topologyGeneration": 12,
+    "authority": "fabric-authority",
+    "authorityGeneration": 3,
+    "bootIncarnation": 5,
+    "epoch": 2,
+    "observedAt": 1000000500,
+    "devices": [
+      {
+        "id": "ep-a",
+        "domain": "dom-a",
+        "state": "present",
+        "terminationCapacity": 20000,
+        "terminationReserved": 0,
+        "capabilities": [
+          "device-add",
+          "device-remove",
+          "device-capacity",
+          "device-state",
+          "device-drain",
+          "device-maintenance",
+          "link-add",
+          "link-remove",
+          "link-capacity",
+          "route-add",
+          "route-remove",
+          "route-state",
+          "policy-bind",
+          "config-set",
+          "workload-binding",
+          "workload-requirements"
+        ],
+        "maxConcurrentChanges": 1,
+        "profileCode": "generic-fabric-endpoint",
+        "maintenanceWindows": [
+          {
+            "id": "mw-ep-a",
+            "begin": 999999000,
+            "end": 1000100000,
+            "ticket": "CHG-1001"
+          }
+        ]
+      },
+      {
+        "id": "ep-b",
+        "domain": "dom-d",
+        "state": "present",
+        "terminationCapacity": 20000,
+        "terminationReserved": 0,
+        "capabilities": [
+          "device-add",
+          "device-remove",
+          "device-capacity",
+          "device-state",
+          "device-drain",
+          "device-maintenance",
+          "link-add",
+          "link-remove",
+          "link-capacity",
+          "route-add",
+          "route-remove",
+          "route-state",
+          "policy-bind",
+          "config-set",
+          "workload-binding",
+          "workload-requirements"
+        ],
+        "maxConcurrentChanges": 1,
+        "profileCode": "generic-fabric-endpoint",
+        "maintenanceWindows": [
+          {
+            "id": "mw-ep-b",
+            "begin": 999999000,
+            "end": 1000100000,
+            "ticket": "CHG-1001"
+          }
+        ]
+      },
+      {
+        "id": "mid-1",
+        "domain": "dom-b",
+        "state": "present",
+        "terminationCapacity": 20000,
+        "terminationReserved": 0,
+        "capabilities": [
+          "device-add",
+          "device-remove",
+          "device-capacity",
+          "device-state",
+          "device-drain",
+          "device-maintenance",
+          "link-add",
+          "link-remove",
+          "link-capacity",
+          "route-add",
+          "route-remove",
+          "route-state",
+          "policy-bind",
+          "config-set",
+          "workload-binding",
+          "workload-requirements"
+        ],
+        "maxConcurrentChanges": 1,
+        "profileCode": "generic-fabric-endpoint",
+        "maintenanceWindows": [
+          {
+            "id": "mw-mid-1",
+            "begin": 999999000,
+            "end": 1000100000,
+            "ticket": "CHG-1001"
+          }
+        ]
+      },
+      {
+        "id": "mid-2",
+        "domain": "dom-c",
+        "state": "present",
+        "terminationCapacity": 20000,
+        "terminationReserved": 0,
+        "capabilities": [
+          "device-add",
+          "device-remove",
+          "device-capacity",
+          "device-state",
+          "device-drain",
+          "device-maintenance",
+          "link-add",
+          "link-remove",
+          "link-capacity",
+          "route-add",
+          "route-remove",
+          "route-state",
+          "policy-bind",
+          "config-set",
+          "workload-binding",
+          "workload-requirements"
+        ],
+        "maxConcurrentChanges": 1,
+        "profileCode": "generic-fabric-endpoint",
+        "maintenanceWindows": [
+          {
+            "id": "mw-mid-2",
+            "begin": 999999000,
+            "end": 1000100000,
+            "ticket": "CHG-1001"
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "id": "l-a1",
+        "endpointA": "ep-a",
+        "endpointB": "mid-1",
+        "state": "present",
+        "capacity": 15000,
+        "reserved": 0,
+        "latencyClass": 1
+      },
+      {
+        "id": "l-1b",
+        "endpointA": "mid-1",
+        "endpointB": "ep-b",
+        "state": "present",
+        "capacity": 12500,
+        "reserved": 0,
+        "latencyClass": 1
+      },
+      {
+        "id": "l-a2",
+        "endpointA": "ep-a",
+        "endpointB": "mid-2",
+        "state": "present",
+        "capacity": 10000,
+        "reserved": 0,
+        "latencyClass": 1
+      },
+      {
+        "id": "l-2b",
+        "endpointA": "mid-2",
+        "endpointB": "ep-b",
+        "state": "present",
+        "capacity": 10000,
+        "reserved": 0,
+        "latencyClass": 1
+      }
+    ],
+    "routes": [
+      {
+        "id": "r-1",
+        "source": "ep-a",
+        "sink": "ep-b",
+        "path": [
+          "l-a1",
+          "l-1b"
+        ],
+        "state": "active"
+      },
+      {
+        "id": "r-2",
+        "source": "ep-a",
+        "sink": "ep-b",
+        "path": [
+          "l-a2",
+          "l-2b"
+        ],
+        "state": "active"
+      }
+    ],
+    "workloads": [
+      {
+        "id": "w-1",
+        "bindings": [
+          {
+            "route": "r-1",
+            "active": true,
+            "demand": 100
+          },
+          {
+            "route": "r-2",
+            "active": true,
+            "demand": 100
+          }
+        ],
+        "requirements": {
+          "requireConnectivity": true,
+          "minDisjointDomains": 0,
+          "minLinkDisjointPaths": 2,
+          "minGuaranteedCapacity": 0
+        },
+        "contractCode": "generic-connectivity-contract"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "step": "step-1be6c442fac955ff7b983386",
+      "attempt": 1,
+      "outcome": "succeeded",
+      "detail": "capacity applied"
+    },
+    {
+      "step": "step-4f88082fd1d7e6a92d2b69d2",
+      "attempt": 1,
+      "outcome": "partially-applied",
+      "detail": "capacity change interrupted"
+    },
+    {
+      "step": "step-57d04565b2a866c307619e55",
+      "attempt": 1,
+      "outcome": "failed",
+      "detail": "runtime rejected the change"
+    },
+    {
+      "step": "step-6908bf2ea88ca0859bd29f35",
+      "attempt": 1,
+      "outcome": "unknown",
+      "detail": "no acknowledgement observed"
+    }
+  ]
+}

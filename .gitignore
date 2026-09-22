@@ -1,0 +1,36 @@
+# Build trees
+/build/
+/build-*/
+/out/
+/install/
+/_install/
+CMakeCache.txt
+CMakeFiles/
+*.obj
+*.pdb
+*.ilk
+*.exp
+*.lib
+*.a
+*.so
+*.dylib
+*.exe
+*.dll
+
+# CMake user/IDE state
+.vs/
+.vscode/
+.idea/
+*.user
+cmake-build-*/
+
+# Test and run debris
+/Testing/
+*.log
+*.tmp
+*.dmp
+*.stackdump
+
+# Tooling
+__pycache__/
+*.pyc
