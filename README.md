@@ -1,6 +1,6 @@
 # Change Planner
 
-Vendor-neutral change planning for Summon Software Labs Fabric OS.
+Vendor-neutral change planning for network fabrics.
 
 Change Planner answers one question: **given the current authoritative state of a
 fabric, an operator's target intent, topology and capability evidence, and a set
